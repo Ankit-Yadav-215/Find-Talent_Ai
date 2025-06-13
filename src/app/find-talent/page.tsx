@@ -482,12 +482,12 @@ export default function LinkedInFilters() {
 }
 
 // Utility function for debouncing
-function debounce<T extends (...args: any[]) => any>(
-  func: T,
+function debounce<Args extends any[], Return>(
+  func: (...args: Args) => Return,
   wait: number
-): (...args: Parameters<T>) => void {
+): (...args: Args) => void {
   let timeout: NodeJS.Timeout;
-  return (...args: Parameters<T>) => {
+  return (...args: Args) => {
     clearTimeout(timeout);
     timeout = setTimeout(() => func(...args), wait);
   };
