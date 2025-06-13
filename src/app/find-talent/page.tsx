@@ -22,22 +22,12 @@ import {
   ChevronLeft,
   ChevronRight,
   Bot,
-  Zap
 } from 'lucide-react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import type { FilterSuggestion, AppliedFilter, LinkedInCandidate, SearchResponse } from '@/lib/linkedin-api';
 
-interface AgenticSearchResults {
-  candidates: LinkedInCandidate[];
-  pagination: {
-    total: number;
-    count: number;
-    start: number;
-  };
-  filters: AppliedFilter[];
-  iterations: number;
-}
+
 
 export default function LinkedInFilters() {
   const searchParams = useSearchParams();

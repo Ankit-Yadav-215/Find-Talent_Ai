@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Switch } from '@/components/ui/switch';
 import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { ArrowLeft, Sparkles, Minus, Plus, X, Send, Loader2, AlertCircle,Bot } from 'lucide-react';
+import { ArrowLeft, Sparkles, Minus, Plus, X, Send, Loader2, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import type { JobDescriptionOutput } from '@/lib/langchain-desc-generator';
@@ -40,9 +40,11 @@ export default function JobReview() {
   const [newSearchTag, setNewSearchTag] = useState('');
   const [editPrompt, setEditPrompt] = useState('');
   const [isRefining, setIsRefining] = useState(false);
-  const [isAgenticSearching, setIsAgenticSearching] = useState(false);
+  // const [isAgenticSearching, setIsAgenticSearching] = useState(false);
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
+
+ 
 
   useEffect(() => {
     const savedRequirements = localStorage.getItem('jobRequirements');
@@ -144,45 +146,45 @@ export default function JobReview() {
     }
   };
 
-  const handleAgenticSearch = async () => {
-    if (!generatedData) return;
+  // const handleAgenticSearch = async () => {
+  //   if (!generatedData) return;
     
-    setIsAgenticSearching(true);
-    setError('');
+  //   setIsAgenticSearching(true);
+  //   setError('');
     
-    try {
-      const response = await fetch('/api/agentic-search', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          jobDescription: generatedData,
-        }),
-      });
+  //   try {
+  //     const response = await fetch('/api/agentic-search', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         jobDescription: generatedData,
+  //       }),
+  //     });
 
-      const result = await response.json();
+  //     const result = await response.json();
 
-      if (!response.ok) {
-        throw new Error(result.error || 'Agentic search failed');
-      }
+  //     if (!response.ok) {
+  //       throw new Error(result.error || 'Agentic search failed');
+  //     }
 
-      if (result.success) {
-        // Store the search results and filters
-        localStorage.setItem('agenticSearchResults', JSON.stringify(result.data));
+  //     if (result.success) {
+  //       // Store the search results and filters
+  //       localStorage.setItem('agenticSearchResults', JSON.stringify(result.data));
         
-        // Redirect to find-talent page with agentic results
-        router.push('/find-talent?agentic=true');
-      } else {
-        throw new Error(result.error || 'Agentic search failed');
-      }
-    } catch (error) {
-      console.error('Error in agentic search:', error);
-      setError(error instanceof Error ? error.message : 'Agentic search failed');
-    } finally {
-      setIsAgenticSearching(false);
-    }
-  };
+  //       // Redirect to find-talent page with agentic results
+  //       router.push('/find-talent?agentic=true');
+  //     } else {
+  //       throw new Error(result.error || 'Agentic search failed');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error in agentic search:', error);
+  //     setError(error instanceof Error ? error.message : 'Agentic search failed');
+  //   } finally {
+  //     setIsAgenticSearching(false);
+  //   }
+  // };
 
   const addSkillTag = () => {
     if (newSkillTag.trim() && jobData && !jobData.skillsTags.includes(newSkillTag.trim())) {
