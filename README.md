@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Talent Finder AI
 
-## Getting Started
+Talent Finder AI is a web application designed to help users quickly find and filter talent using AI-powered tools. It features a LinkedIn-style search, a job description generator, and more. The project is built with Next.js, React, and TypeScript, and is deployed on [Vercel](https://talent-finder-ai.vercel.app/).
 
-First, run the development server:
+---
 
-```bash
+## 🚀 Live Demo
+
+[https://talent-finder-ai.vercel.app/](https://talent-finder-ai.vercel.app/)
+
+---
+
+## 🛠️ Features
+
+- **Find Talent:** Search and filter candidates using AI-enhanced queries.
+- **Description Generator:** Instantly generate job descriptions with AI.
+- **Debounced Search:** Responsive, efficient search with debouncing.
+- **Modern UI:** Responsive and accessible design using Tailwind CSS.
+- **API Integration:** Backend endpoints for LinkedIn-style filtering and job description generation.
+
+---
+
+## 📦 Tech Stack
+
+- **Frontend:** Next.js, React, TypeScript, Tailwind CSS
+- **Backend:** Next.js API routes (Node.js)
+- **Deployment:** Vercel
+
+---
+
+## 📁 Project Structure
+
+```
+.
+├── components/         # Reusable React components
+├── pages/              # Next.js pages and API routes
+│   ├── api/            # Backend API endpoints
+│   └── ...             # Frontend pages
+├── public/             # Static assets
+├── styles/             # Global and component styles
+├── utils/              # Utility functions (e.g., debounce)
+├── tsconfig.json       # TypeScript configuration
+├── tailwind.config.js  # Tailwind CSS configuration
+└── ...
+```
+
+---
+
+## 🚦 Getting Started
+
+### 1. **Clone the repository**
+
+```sh
+git clone https://github.com/your-username/talent-finder-ai.git
+cd talent-finder-ai
+```
+
+### 2. **Install dependencies**
+
+```sh
+npm install
+# or
+yarn install
+```
+
+### 3. **Run the development server**
+
+```sh
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚙️ Environment Variables
 
-## Learn More
+Create a `.env.local` file in the root directory and add any required environment variables.  
+For example:
 
-To learn more about Next.js, take a look at the following resources:
+```
+OPENAI_API_KEY=your_openai_api_key
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📝 Scripts
 
-## Deploy on Vercel
+- `dev` – Start the development server
+- `build` – Build for production
+- `start` – Start the production server
+- `lint` – Run ESLint
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🧪 Testing
+
+If you have tests, run:
+
+```sh
+npm run test
+```
+
+---
+
+## 🖼️ Screenshots
+
+![Talent Finder AI Screenshot](public/screenshot.png)
+
+---
+
+## 🐞 Troubleshooting
+
+- **ESLint errors:** Follow the error messages and update your code (e.g., avoid `any` in TypeScript).
+- **API errors:** Ensure your environment variables are set correctly.
+- **Deployment issues:** Check your Vercel dashboard for logs and errors.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 🙏 Acknowledgements
+
+- [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [OpenAI](https://openai.com/)
+
+---
+
+## 🌐 Deployed Link
+
+[https://talent-finder-ai.vercel.app/](https://talent-finder-ai.vercel.app/)
+
+---
+
+
