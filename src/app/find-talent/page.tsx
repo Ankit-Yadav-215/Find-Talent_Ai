@@ -482,7 +482,7 @@ export default function LinkedInFilters() {
 }
 
 // Utility function for debouncing
-function debounce<T extends (...args: unknown[]) => any>(
+function debounce<T extends (...args: any[]) => any>(
   func: T,
   wait: number
 ): (...args: Parameters<T>) => void {
