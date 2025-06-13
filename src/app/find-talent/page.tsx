@@ -24,14 +24,15 @@ import {
   Bot,
 } from 'lucide-react';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+// import { useSearchParams } from 'next/navigation';
 import type { FilterSuggestion, AppliedFilter, LinkedInCandidate, SearchResponse } from '@/lib/linkedin-api';
 
 
 
 export default function LinkedInFilters() {
-  const searchParams = useSearchParams();
-  const isAgenticMode = searchParams.get('agentic') === 'true';
+  // const searchParams = useSearchParams();
+  // const isAgenticMode = searchParams.get('agentic') === 'true';
+  const isAgenticMode = false; // Set to true if you want to enable agentic mode
   
   const [activeFilterType, setActiveFilterType] = useState('job-title');
   const [searchQuery, setSearchQuery] = useState('');
