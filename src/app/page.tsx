@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Sparkles, Users, Zap, Target } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 // import Link from 'next/link';
 import {useRouter} from 'next/navigation';
 

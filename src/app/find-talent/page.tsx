@@ -174,10 +174,10 @@ export default function LinkedInFilters() {
     searchCandidates(newPage);
   };
 
-  const getFilterIcon = (type: string) => {
-    const filterType = filterTypes.find(ft => ft.id === type);
-    return filterType ? filterType.icon : Filter;
-  };
+  // const getFilterIcon = (type: string) => {
+  //   const filterType = filterTypes.find(ft => ft.id === type);
+  //   return filterType ? filterType.icon : Filter;
+  // };
 
   const totalPages = searchResults ? Math.ceil(searchResults.response.pagination.total / 25) : 0;
   const candidatesFound = searchResults?.response.pagination.total || 0;
