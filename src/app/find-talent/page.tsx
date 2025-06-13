@@ -312,7 +312,7 @@ export default function LinkedInFilters() {
                     {/* No suggestions message */}
                     {searchQuery.trim() && suggestions.length === 0 && !isLoadingSuggestions && (
                       <div className="text-center py-4">
-                        <p className="text-slate-400 text-sm">No suggestions found for "{searchQuery}"</p>
+                        <p className="text-slate-400 text-sm">No suggestions found for {searchQuery}</p>
                       </div>
                     )}
                   </div>
@@ -482,7 +482,7 @@ export default function LinkedInFilters() {
 }
 
 // Utility function for debouncing
-function debounce<T extends (...args: any[]) => any>(
+function debounce<T extends (...args: unknown[]) => any>(
   func: T,
   wait: number
 ): (...args: Parameters<T>) => void {
